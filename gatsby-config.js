@@ -1,19 +1,28 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "Tailwind-Mkmr",
+    siteUrl: 'https://www.yourdomain.tld',
+    title: 'Tailwind-Mkmr',
   },
   plugins: [
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-plugin-sass`,
       options: {
-        name: "images",
-        path: "./src/images/",
+        postCssPlugins: [
+          require('tailwindcss'),
+          require('./tailwind.config.js'),
+        ],
       },
-      __key: "images",
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: './src/images/',
+      },
+      __key: 'images',
     },
   ],
 };

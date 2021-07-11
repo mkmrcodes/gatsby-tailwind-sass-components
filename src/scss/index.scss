@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: #c1c1c1;
+}
+body {
+  font-family: Oswald, sans-serif;
+}
+@layer components {
+  .container {
+    @apply block h-screen max-w-full bg-light mx-auto p-0 xl:max-w-screen-xl;
+  }
+  .btn {
+    @apply inline-block font-extra px-8 py-2 rounded-md shadow-lg hover:-translate-y-0.5 focus:outline-none transform transition  uppercase tracking-widest font-semibold text-xs sm:text-base lg:text-lg disabled:bg-gray-400;
+  }
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover active:bg-primary-active text-white;
+  }
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-hover active:bg-secondary-active text-white;
+  }
+  .btn-tertiary {
+    @apply bg-tertiary hover:bg-tertiary-hover active:bg-tertiary-active text-white;
+  }
+  .btn-success {
+    @apply bg-success text-white;
+  }
+  .btn-error {
+    @apply bg-error text-white;
+  }
+  .btn-dark {
+    @apply bg-dark text-white;
+  }
+}
